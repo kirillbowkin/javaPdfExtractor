@@ -1,6 +1,6 @@
 package org.example;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.io.File;
 
@@ -8,7 +8,7 @@ class PdfExtractorTest {
 
     private PdfExtractor pdfExtractor;
 
-    @BeforeAll
+    @BeforeEach
     void setUp() throws PdfLoadException {
         // This pdf contains highlighted text
         File pdfFile = new File("src/test/resources/Willows.pdf");
