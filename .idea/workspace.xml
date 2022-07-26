@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="created test for extracting highlighted words">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="made tests for getHighlightedWords green by stackoverflow magic" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -280,7 +275,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658875837951</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added one more test">
+      <created>1658879930681</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1658879930681</updated>
+    </task>
+    <task id="LOCAL-00010" summary="made tests for getHighlightedWords green by stackoverflow magic">
+      <created>1658879997276</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1658879997276</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -303,6 +312,11 @@
     <MESSAGE value="fixing BeforeAll in PdfExtractorTest" />
     <MESSAGE value="fixing BeforeAll in PdfExtractorTest again" />
     <MESSAGE value="created test for extracting highlighted words" />
-    <option name="LAST_COMMIT_MESSAGE" value="created test for extracting highlighted words" />
+    <MESSAGE value="added one more test" />
+    <MESSAGE value="made tests for getHighlightedWords green by stackoverflow magic" />
+    <option name="LAST_COMMIT_MESSAGE" value="made tests for getHighlightedWords green by stackoverflow magic" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pdfExtractor$Tests_in__pdfExtractor_test_.ic" NAME="Tests in 'pdfExtractor.test' Coverage Results" MODIFIED="1658880122429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
