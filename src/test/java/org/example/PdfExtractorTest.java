@@ -6,11 +6,13 @@ import java.io.File;
 
 class PdfExtractorTest {
 
+    private PdfExtractor pdfExtractor;
+
     @BeforeAll
     void setUp() throws PdfLoadException {
         // This pdf contains highlighted text
         File pdfFile = new File("src/test/resources/Willows.pdf");
-        PdfExtractor pdfExtractor = new PdfExtractor(pdfFile);
+        this.pdfExtractor = new PdfExtractor(pdfFile);
     }
 
 }
