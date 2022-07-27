@@ -35,6 +35,11 @@ public class PdfExtractor {
         }
     }
 
+    /**
+     * returns list of highlighted words for all pages of pdf document
+     * @return list of highlighted words
+     * @throws WordsExtractionException
+     */
     public List<String> getHighlightedWords() throws WordsExtractionException {
         List<String> highlightedTexts = new ArrayList<>();
 
