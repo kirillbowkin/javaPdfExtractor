@@ -15,6 +15,7 @@ import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
 import org.apache.pdfbox.text.PDFTextStripperByArea;
 import org.example.exceptions.PdfLoadException;
+import org.example.exceptions.WordsExtractionException;
 
 
 public class PdfExtractor {
@@ -34,7 +35,7 @@ public class PdfExtractor {
         }
     }
 
-    public List<String> getHighlightedWords() {
+    public List<String> getHighlightedWords() throws WordsExtractionException {
         List<String> highlightedTexts = new ArrayList<>();
 
         int pageNum = 0;
@@ -44,7 +45,7 @@ public class PdfExtractor {
             try {
                 annotations = pdfpage.getAnnotations();
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                throw new WordsExtractionException("Failed to extract words from pdf", e.getCause());
             }
             //first setup text extraction regions
             for (int i = 0; i < annotations.size(); i++) {
@@ -58,7 +59,7 @@ public class PdfExtractor {
                     try {
                         stripper = new PDFTextStripperByArea();
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        throw new WordsExtractionException("Failed to extract words from pdf", e.getCause());
                     }
                     COSArray quadsArray = (COSArray) annot.getCOSObject().getCOSArray(COSName.getPDFName("QuadPoints"));
                     String str = null;
@@ -85,7 +86,7 @@ public class PdfExtractor {
                         try {
                             stripper.extractRegions(pdfpage);
                         } catch (IOException e) {
-                            throw new RuntimeException(e);
+                            throw new WordsExtractionException("Failed to extract words from pdf", e.getCause());
                         }
                         String highlightedText = stripper.getTextForRegion("highlightedRegion")
                                 .replaceAll("[\\n\\t ]", " ")

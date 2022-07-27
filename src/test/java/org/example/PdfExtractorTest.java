@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.exceptions.PdfLoadException;
+import org.example.exceptions.WordsExtractionException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,14 +23,14 @@ class PdfExtractorTest {
     }
 
     @Test
-    void shouldPassIfThereAreHighlightedWords() {
+    void shouldPassIfThereAreHighlightedWords() throws WordsExtractionException {
         List<String> highlightedWords = this.pdfExtractor.getHighlightedWords();
         assertNotNull(highlightedWords);
         assertTrue(highlightedWords.size() > 0);
     }
 
     @Test
-    void shouldPassIfReturnsAllHighlightedWords() {
+    void shouldPassIfReturnsAllHighlightedWords() throws WordsExtractionException {
         List<String> highlightedWords = this.pdfExtractor.getHighlightedWords();
         assertEquals(highlightedWords.size(), 6);
         assertEquals(highlightedWords, Arrays.asList("flood", "sand", "masses of shore", "kingdom", "Donaueschingen", "Danube"));
