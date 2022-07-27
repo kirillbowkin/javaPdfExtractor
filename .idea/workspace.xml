@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="exception handling in getHighlightedWords">
+    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="javadoc for getHighlightedWords">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -313,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658949195696</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="javadoc for getHighlightedWords">
+      <created>1658949276392</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1658949276393</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,7 +349,8 @@
     <MESSAGE value="made tests for getHighlightedWords green with stackoverflow magic" />
     <MESSAGE value="refactor, created exceptions folder" />
     <MESSAGE value="exception handling in getHighlightedWords" />
-    <option name="LAST_COMMIT_MESSAGE" value="exception handling in getHighlightedWords" />
+    <MESSAGE value="javadoc for getHighlightedWords" />
+    <option name="LAST_COMMIT_MESSAGE" value="javadoc for getHighlightedWords" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

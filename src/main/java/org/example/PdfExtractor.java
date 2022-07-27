@@ -44,6 +44,7 @@ public class PdfExtractor {
         List<String> highlightedTexts = new ArrayList<>();
 
         int pageNum = 0;
+        //TODO: consider changing foreach to streams
         for (PDPage pdfpage : this.pdfDocument.getPages()) {
             pageNum++;
             List<PDAnnotation> annotations = null;
@@ -52,6 +53,8 @@ public class PdfExtractor {
             } catch (IOException e) {
                 throw new WordsExtractionException("Failed to extract words from pdf", e.getCause());
             }
+
+            //TODO: extract loop below to method: getHighlightedWordsPerPage or sth like that
             //first setup text extraction regions
             for (int i = 0; i < annotations.size(); i++) {
                 PDAnnotation annot = annotations.get(i);
@@ -64,11 +67,14 @@ public class PdfExtractor {
                     try {
                         stripper = new PDFTextStripperByArea();
                     } catch (IOException e) {
+                        //TODO: consider creating specific exception sth like PdfTextStripperByAreaCreationException and throw it instead of WordsExtractionException
+                        // and then use it as cause for one global try catch
                         throw new WordsExtractionException("Failed to extract words from pdf", e.getCause());
                     }
                     COSArray quadsArray = (COSArray) annot.getCOSObject().getCOSArray(COSName.getPDFName("QuadPoints"));
                     String str = null;
                     for (int j = 1, k = 0; j <= (quadsArray.size() / 8); j++) {
+                        //TODO: don't like how this indexes looks like, it would be better to get rid of these vague indexes at all
                         Float ULX = ((COSInteger) quadsArray.get(0 + k)).floatValue();
                         Float ULY = ((COSInteger) quadsArray.get(1 + k)).floatValue();
                         Float URX = ((COSInteger) quadsArray.get(2 + k)).floatValue();
