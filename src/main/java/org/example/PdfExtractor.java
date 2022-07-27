@@ -68,13 +68,13 @@ public class PdfExtractor {
                         stripper = new PDFTextStripperByArea();
                     } catch (IOException e) {
                         //TODO: consider creating specific exception sth like PdfTextStripperByAreaCreationException and throw it instead of WordsExtractionException
-                        // and then use it as cause for one global try catch
+                        // and then use it as cause in one global try catch
                         throw new WordsExtractionException("Failed to extract words from pdf", e.getCause());
                     }
                     COSArray quadsArray = (COSArray) annot.getCOSObject().getCOSArray(COSName.getPDFName("QuadPoints"));
                     String str = null;
                     for (int j = 1, k = 0; j <= (quadsArray.size() / 8); j++) {
-                        //TODO: don't like how this indexes looks like, it would be better to get rid of these vague indexes at all
+                        //TODO: don't like how this indexes look like, it would be better to get rid of these vague indexes at all if possible
                         Float ULX = ((COSInteger) quadsArray.get(0 + k)).floatValue();
                         Float ULY = ((COSInteger) quadsArray.get(1 + k)).floatValue();
                         Float URX = ((COSInteger) quadsArray.get(2 + k)).floatValue();
