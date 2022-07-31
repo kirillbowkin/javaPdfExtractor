@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="updated gitignore">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" afterDir="false" />
+    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="done TODO of extracting getting words per annotations to separate method">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658950292259</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="done TODO of extracting getting words per annotations to separate method">
+      <created>1659297375391</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1659297375391</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -374,7 +380,8 @@
     <MESSAGE value="todos for getHighlightedWords" />
     <MESSAGE value="editing todos for getHighlightedWords" />
     <MESSAGE value="updated gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated gitignore" />
+    <MESSAGE value="done TODO of extracting getting words per annotations to separate method" />
+    <option name="LAST_COMMIT_MESSAGE" value="done TODO of extracting getting words per annotations to separate method" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
