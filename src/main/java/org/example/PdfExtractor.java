@@ -34,19 +34,11 @@ public class PdfExtractor {
         }
     }
 
-    /**
-     * returns list of highlighted words for all pages of pdf document
-     *
-     * @return list of highlighted words
-     * @throws GetHighlightedWordsException
-     */
-    public List<String> getHighlightedWords() throws GetHighlightedWordsException {
-
-        List<String> highlightedTexts = new ArrayList<>();
+    private List<String> getAnnotatedWords(PdfAnnotationType annotationType) throws GetAnnotatedWordsException {
+        List<String> annotatedTexts = new ArrayList<>();
 
         int pageNum = 0;
         //TODO: consider changing foreach to streams
-
         try {
             for (PDPage pdfpage : this.pdfDocument.getPages()) {
                 pageNum++;
@@ -57,13 +49,27 @@ public class PdfExtractor {
                     throw new GetAnnotationsException("Failed to get annotations from page", e.getCause());
                 }
 
-                highlightedTexts.addAll(getWordsForAnnotations(pdfpage, annotations, PdfAnnotationType.HIGHLIGHTED));
+                annotatedTexts.addAll(getWordsForAnnotations(pdfpage, annotations, annotationType));
 
             }
         } catch (GetAnnotationsException | GetWordsForAnnotationsException e) {
+            throw new GetAnnotatedWordsException("Failed to get annotated words", e.getCause());
+        }
+        return annotatedTexts;
+    }
+
+    /**
+     * returns list of highlighted words for all pages of pdf document
+     *
+     * @return list of highlighted words
+     * @throws GetHighlightedWordsException
+     */
+    public List<String> getHighlightedWords() throws GetHighlightedWordsException {
+        try {
+            return getAnnotatedWords(PdfAnnotationType.HIGHLIGHTED);
+        } catch (GetAnnotatedWordsException e) {
             throw new GetHighlightedWordsException("Failed to get highlighted words", e.getCause());
         }
-        return highlightedTexts;
     }
 
     private List<String> getWordsForAnnotations(PDPage pdfpage, List<PDAnnotation> annotations, PdfAnnotationType annotationType) throws GetWordsForAnnotationsException {
