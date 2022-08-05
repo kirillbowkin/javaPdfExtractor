@@ -6,9 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.pdfbox.cos.COSArray;
-import org.apache.pdfbox.cos.COSInteger;
-import org.apache.pdfbox.cos.COSName;
+import org.apache.pdfbox.cos.*;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
@@ -72,6 +70,20 @@ public class PdfExtractor {
         }
     }
 
+    /**
+     * returns list of underlined words for all pages of pdf document
+     *
+     * @return list of underlined words
+     * @throws GetUnderlinedWordsException
+     */
+    public List<String> getUnderlinedWords() throws GetUnderlinedWordsException {
+        try {
+            return getAnnotatedWords(PdfAnnotationType.UNDERLINED);
+        } catch (GetAnnotatedWordsException e) {
+            throw new GetUnderlinedWordsException("Failed to get underlined words", e.getCause());
+        }
+    }
+
     private List<String> getWordsForAnnotations(PDPage pdfpage, List<PDAnnotation> annotations, PdfAnnotationType annotationType) throws GetWordsForAnnotationsException {
         List<String> annotationTexts = new ArrayList<>();
         try {
@@ -92,14 +104,14 @@ public class PdfExtractor {
                     String str = null;
                     for (int j = 1, k = 0; j <= (quadsArray.size() / 8); j++) {
                         //TODO: don't like how this indexes look like, it would be better to get rid of these vague indexes at all if possible
-                        Float ULX = ((COSInteger) quadsArray.get(0 + k)).floatValue();
-                        Float ULY = ((COSInteger) quadsArray.get(1 + k)).floatValue();
-                        Float URX = ((COSInteger) quadsArray.get(2 + k)).floatValue();
-                        Float URY = ((COSInteger) quadsArray.get(3 + k)).floatValue();
-                        Float LLX = ((COSInteger) quadsArray.get(4 + k)).floatValue();
-                        Float LLY = ((COSInteger) quadsArray.get(5 + k)).floatValue();
-                        Float LRX = ((COSInteger) quadsArray.get(6 + k)).floatValue();
-                        Float LRY = ((COSInteger) quadsArray.get(7 + k)).floatValue();
+                        Float ULX = ((COSNumber) quadsArray.get(0 + k)).floatValue();
+                        Float ULY = ((COSNumber) quadsArray.get(1 + k)).floatValue();
+                        Float URX = ((COSNumber) quadsArray.get(2 + k)).floatValue();
+                        Float URY = ((COSNumber) quadsArray.get(3 + k)).floatValue();
+                        Float LLX = ((COSNumber) quadsArray.get(4 + k)).floatValue();
+                        Float LLY = ((COSNumber) quadsArray.get(5 + k)).floatValue();
+                        Float LRX = ((COSNumber) quadsArray.get(6 + k)).floatValue();
+                        Float LRY = ((COSNumber) quadsArray.get(7 + k)).floatValue();
                         k += 8;
                         float ulx = ULX - 1; // upper left x.
                         float uly = ULY; // upper left y.
@@ -110,13 +122,15 @@ public class PdfExtractor {
                         uly = pageSize.getHeight() - uly;
 
                         Rectangle2D.Float rectangle_2 = new Rectangle2D.Float(ulx, uly, width, height);
-                        stripper.addRegion("highlightedRegion", rectangle_2);
+                        stripper.addRegion("annotatedRegion", rectangle_2);
                         try {
                             stripper.extractRegions(pdfpage);
                         } catch (IOException e) {
                             throw new PDFStripperByAreaRegionExtractionException("Failed to extract regions", e.getCause());
                         }
-                        String highlightedText = stripper.getTextForRegion("highlightedRegion")
+
+                        //TODO: fix regex, when \n in the end of the page
+                        String highlightedText = stripper.getTextForRegion("annotatedRegion")
                                 .replaceAll("[\\n\\t ]", " ")
                                 .replaceAll("[.!?,\\--]", "")
                                 .trim();

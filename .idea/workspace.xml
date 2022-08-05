@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="generalized getWordsForAnnotations using PdfAnnotationType">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/GetAnnotatedWordsException.java" afterDir="false" />
+    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="made generic method for extracting different annotations">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/GetUnderlinedWordsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Willows.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Willows.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,17 +73,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/kiril/IdeaProjects/pdfExtractor&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "/home/kiril/IdeaProjects/pdfExtractor/src/test/resources",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.exceptions" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
@@ -92,7 +97,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PdfExtractorTest">
+  <component name="RunManager" selected="Gradle.PdfExtractorTest.shouldPassIfReturnsAllUnderlinedWords">
     <configuration name="PdfExtractorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -116,7 +121,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PdfExtractorTest.shouldPassIfReturnsAllHighlightedWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PdfExtractorTest.shouldPassIfReturnsAllUnderlinedWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -129,7 +134,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfReturnsAllHighlightedWords&quot;" />
+            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfReturnsAllUnderlinedWords&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -162,7 +167,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PdfExtractorTest.shouldPassIfThereIsHighlightedWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PdfExtractorTest.shouldPassIfThereAreUnderlinedWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -175,7 +180,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfThereIsHighlightedWords&quot;" />
+            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfThereAreUnderlinedWords&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -208,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllUnderlinedWords" />
         <item itemvalue="Gradle.PdfExtractorTest" />
-        <item itemvalue="Gradle.Tests in 'pdfExtractor.test'" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreHighlightedWords" />
-        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllHighlightedWords" />
-        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereIsHighlightedWords" />
+        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreUnderlinedWords" />
+        <item itemvalue="Gradle.Tests in 'pdfExtractor.test'" />
       </list>
     </recent_temporary>
   </component>
@@ -379,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659722731607</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="made generic method for extracting different annotations">
+      <created>1659723468156</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1659723468156</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -416,7 +428,18 @@
     <MESSAGE value="refactor PdfExtractor exception handling" />
     <MESSAGE value="enum wrapper of existing pdf annotation types" />
     <MESSAGE value="generalized getWordsForAnnotations using PdfAnnotationType" />
-    <option name="LAST_COMMIT_MESSAGE" value="generalized getWordsForAnnotations using PdfAnnotationType" />
+    <MESSAGE value="made generic method for extracting different annotations" />
+    <option name="LAST_COMMIT_MESSAGE" value="made generic method for extracting different annotations" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
