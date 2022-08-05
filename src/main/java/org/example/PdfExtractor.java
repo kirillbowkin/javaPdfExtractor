@@ -84,6 +84,20 @@ public class PdfExtractor {
         }
     }
 
+    /**
+     * returns list of squiggled words for all pages of pdf document
+     *
+     * @return list of squiggled words
+     * @throws GetSquiggledWordsException
+     */
+    public List<String> getSquiggledWords() throws GetSquiggledWordsException {
+        try {
+            return getAnnotatedWords(PdfAnnotationType.SQUIGGLY);
+        } catch (GetAnnotatedWordsException e) {
+            throw new GetSquiggledWordsException("Failed to get squiggled words", e.getCause());
+        }
+    }
+
     private List<String> getWordsForAnnotations(PDPage pdfpage, List<PDAnnotation> annotations, PdfAnnotationType annotationType) throws GetWordsForAnnotationsException {
         List<String> annotationTexts = new ArrayList<>();
         try {
@@ -130,6 +144,7 @@ public class PdfExtractor {
                         }
 
                         //TODO: fix regex, when \n in the end of the page
+                        //TODO: fix regex, comma and others needed when it's sentence
                         String highlightedText = stripper.getTextForRegion("annotatedRegion")
                                 .replaceAll("[\\n\\t ]", " ")
                                 .replaceAll("[.!?,\\--]", "")

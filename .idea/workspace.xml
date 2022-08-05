@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="made generic method for extracting different annotations">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/GetUnderlinedWordsException.java" afterDir="false" />
+    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="added extraction of underlined words">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/GetSquiggledWordsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" afterDir="false" />
@@ -97,7 +97,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PdfExtractorTest.shouldPassIfReturnsAllUnderlinedWords">
+  <component name="RunManager" selected="Gradle.PdfExtractorTest">
     <configuration name="PdfExtractorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -112,6 +112,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.example.PdfExtractorTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PdfExtractorTest.shouldPassIfReturnsAllSquiggleddWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfReturnsAllSquiggleddWords&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -167,7 +190,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PdfExtractorTest.shouldPassIfThereAreUnderlinedWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PdfExtractorTest.shouldPassIfThereAreSquiggledWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -180,28 +203,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfThereAreUnderlinedWords&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="Tests in 'pdfExtractor.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
+            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfThereAreSquiggledWords&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -213,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllUnderlinedWords" />
         <item itemvalue="Gradle.PdfExtractorTest" />
+        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllSquiggleddWords" />
+        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreSquiggledWords" />
+        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllUnderlinedWords" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreHighlightedWords" />
-        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreUnderlinedWords" />
-        <item itemvalue="Gradle.Tests in 'pdfExtractor.test'" />
       </list>
     </recent_temporary>
   </component>
@@ -391,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659723468156</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added extraction of underlined words">
+      <created>1659741702260</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1659741702260</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -429,7 +438,8 @@
     <MESSAGE value="enum wrapper of existing pdf annotation types" />
     <MESSAGE value="generalized getWordsForAnnotations using PdfAnnotationType" />
     <MESSAGE value="made generic method for extracting different annotations" />
-    <option name="LAST_COMMIT_MESSAGE" value="made generic method for extracting different annotations" />
+    <MESSAGE value="added extraction of underlined words" />
+    <option name="LAST_COMMIT_MESSAGE" value="added extraction of underlined words" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
