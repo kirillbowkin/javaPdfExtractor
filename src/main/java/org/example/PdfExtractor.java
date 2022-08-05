@@ -57,7 +57,7 @@ public class PdfExtractor {
                     throw new GetAnnotationsException("Failed to get annotations from page", e.getCause());
                 }
 
-                highlightedTexts.addAll(getWordsForAnnotations(pdfpage, annotations));
+                highlightedTexts.addAll(getWordsForAnnotations(pdfpage, annotations, PdfAnnotationType.HIGHLIGHTED));
 
             }
         } catch (GetAnnotationsException | GetWordsForAnnotationsException e) {
@@ -66,7 +66,7 @@ public class PdfExtractor {
         return highlightedTexts;
     }
 
-    private List<String> getWordsForAnnotations(PDPage pdfpage, List<PDAnnotation> annotations) throws GetWordsForAnnotationsException {
+    private List<String> getWordsForAnnotations(PDPage pdfpage, List<PDAnnotation> annotations, PdfAnnotationType annotationType) throws GetWordsForAnnotationsException {
         List<String> annotationTexts = new ArrayList<>();
         try {
             for (int i = 0; i < annotations.size(); i++) {
@@ -74,7 +74,7 @@ public class PdfExtractor {
                 var annotNote = annot.getContents(); // Conteudo anotado na nota
                 var annotSubType = annot.getSubtype(); // Tipo da nota (Highlight, Text)
                 // annotTitle = annot.getTitlePopup(); // Autor da nota
-                if (annotSubType.equals("Highlight")) {
+                if (annotSubType.equals(annotationType.getType())) {
                     // extract highlighted text
                     PDFTextStripperByArea stripper = null;
                     try {

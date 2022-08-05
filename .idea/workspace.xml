@@ -91,7 +91,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PdfExtractorTest.shouldPassIfThereAreHighlightedWords">
+  <component name="RunManager" selected="Gradle.Tests in 'pdfExtractor.test'">
     <configuration name="PdfExtractorTest.getHighlightedWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -207,8 +207,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreHighlightedWords" />
         <item itemvalue="Gradle.Tests in 'pdfExtractor.test'" />
+        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreHighlightedWords" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllHighlightedWords" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereIsHighlightedWords" />
         <item itemvalue="Gradle.PdfExtractorTest.getHighlightedWords" />

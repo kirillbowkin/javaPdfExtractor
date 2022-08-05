@@ -10,6 +10,10 @@ public enum PdfAnnotationType {
 
     private final String type;
 
+    public String getType() {
+        return type;
+    }
+
     PdfAnnotationType(String type) {
         this.type = type;
     }
