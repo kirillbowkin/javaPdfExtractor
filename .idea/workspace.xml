@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="done TODO of extracting getting words per annotations to separate method">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="edited gitignore">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/GetAnnotationsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/GetWordsForAnnotationsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/PDFStripperByAreaRegionExtractionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/PDFTextStripperByAreaCreationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exceptions/WordsExtractionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/GetHighlightedWordsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,16 +75,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/home/kiril/IdeaProjects/pdfExtractor",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kiril/IdeaProjects/pdfExtractor&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
@@ -348,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659297375391</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="edited gitignore">
+      <created>1659297454862</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1659297454862</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -381,7 +395,8 @@
     <MESSAGE value="editing todos for getHighlightedWords" />
     <MESSAGE value="updated gitignore" />
     <MESSAGE value="done TODO of extracting getting words per annotations to separate method" />
-    <option name="LAST_COMMIT_MESSAGE" value="done TODO of extracting getting words per annotations to separate method" />
+    <MESSAGE value="edited gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited gitignore" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
