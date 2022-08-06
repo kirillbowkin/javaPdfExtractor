@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.exceptions.GetSquiggledWordsException;
-import org.example.exceptions.GetUnderlinedWordsException;
-import org.example.exceptions.PdfLoadException;
-import org.example.exceptions.GetHighlightedWordsException;
+import org.example.exceptions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +16,7 @@ class PdfExtractorTest {
 
     @BeforeEach
     void setUp() throws PdfLoadException {
-        // This pdf contains highlighted, underlined text
+        // This pdf contains highlighted, underlined, squiggled, stroke out text
         File pdfFile = new File("src/test/resources/Willows.pdf");
         this.pdfExtractor = new PdfExtractor(pdfFile);
     }
@@ -64,6 +61,20 @@ class PdfExtractorTest {
         List<String> squiggledWords = this.pdfExtractor.getSquiggledWords();
         assertEquals(squiggledWords.size(), 2);
         assertEquals(squiggledWords, Arrays.asList("After leaving Vienna and long before you come to Budapest the Danube", "Sumpfe"));
+    }
+
+    @Test
+    void shouldPassIfThereAreStrokeOutWords() throws GetStrokeoutWordsException {
+        List<String> strokeOutWords = this.pdfExtractor.getStrokeoutWords();
+        assertNotNull(strokeOutWords);
+        assertTrue(strokeOutWords.size() > 0);
+    }
+
+    @Test
+    void shouldPassIfReturnsAllStrokeOutWords() throws GetStrokeoutWordsException {
+        List<String> strokeOutWords = this.pdfExtractor.getStrokeoutWords();
+        assertEquals(strokeOutWords.size(), 2);
+        assertEquals(strokeOutWords, Arrays.asList("becomes a swamp for miles upon miles", "marshes"));
     }
 
 }

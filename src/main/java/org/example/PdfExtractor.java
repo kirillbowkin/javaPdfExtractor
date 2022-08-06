@@ -98,6 +98,20 @@ public class PdfExtractor {
         }
     }
 
+    /**
+     * returns list of strokeout words for all pages of pdf document
+     *
+     * @return list of strokeout words
+     * @throws GetStrokeoutWordsException
+     */
+    public List<String> getStrokeoutWords() throws GetStrokeoutWordsException {
+        try {
+            return getAnnotatedWords(PdfAnnotationType.STRIKEOUT);
+        } catch (GetAnnotatedWordsException e) {
+            throw new GetStrokeoutWordsException("Failed to get stroke out words", e.getCause());
+        }
+    }
+
     private List<String> getWordsForAnnotations(PDPage pdfpage, List<PDAnnotation> annotations, PdfAnnotationType annotationType) throws GetWordsForAnnotationsException {
         List<String> annotationTexts = new ArrayList<>();
         try {
