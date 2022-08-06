@@ -49,7 +49,7 @@ class PdfExtractorTest {
     void shouldPassIfReturnsAllUnderlinedWords() throws GetUnderlinedWordsException {
         List<String> highlightedWords = this.pdfExtractor.getUnderlinedWords();
         assertEquals(highlightedWords.size(), 2);
-        assertEquals(highlightedWords, Arrays.asList("These willows never attain to thedignity  of  trees;", "green  swells  like  the  sea"));
+        assertEquals(highlightedWords, Arrays.asList("These willows never attain to the dignity  of  trees", "green  swells  like  the  sea"));
     }
 
     @Test
@@ -63,7 +63,7 @@ class PdfExtractorTest {
     void shouldPassIfReturnsAllSquiggledWords() throws GetSquiggledWordsException {
         List<String> squiggledWords = this.pdfExtractor.getSquiggledWords();
         assertEquals(squiggledWords.size(), 2);
-        assertEquals(squiggledWords, Arrays.asList("After leaving Vienna and long before you cometo Budapest the Danube", "Sumpfe"));
+        assertEquals(squiggledWords, Arrays.asList("After leaving Vienna and long before you come to Budapest the Danube", "Sumpfe"));
     }
 
 }

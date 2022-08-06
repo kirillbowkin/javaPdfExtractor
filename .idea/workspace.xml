@@ -94,7 +94,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PdfExtractorTest.shouldPassIfReturnsAllSquiggledWords">
+  <component name="RunManager" selected="Gradle.PdfExtractorTest">
     <configuration name="PdfExtractorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -212,9 +212,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PdfExtractorTest" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllSquiggledWords" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllSquiggleddWords" />
-        <item itemvalue="Gradle.PdfExtractorTest" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreSquiggledWords" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllUnderlinedWords" />
       </list>
