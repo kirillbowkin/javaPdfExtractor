@@ -47,9 +47,9 @@ class PdfExtractorTest {
 
     @Test
     void shouldPassIfReturnsAllUnderlinedWords() throws GetUnderlinedWordsException {
-        List<String> highlightedWords = this.pdfExtractor.getUnderlinedWords();
-        assertEquals(highlightedWords.size(), 2);
-        assertEquals(highlightedWords, Arrays.asList("These willows never attain to the dignity  of  trees", "green  swells  like  the  sea"));
+        List<String> underlinedWords = this.pdfExtractor.getUnderlinedWords();
+        assertEquals(underlinedWords.size(), 2);
+        assertEquals(underlinedWords, Arrays.asList("These willows never attain to the dignity  of  trees", "green  swells  like  the  sea"));
     }
 
     @Test

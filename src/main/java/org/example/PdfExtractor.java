@@ -143,12 +143,8 @@ public class PdfExtractor {
                             throw new PDFStripperByAreaRegionExtractionException("Failed to extract regions", e.getCause());
                         }
 
-                        //TODO: fix regex, when \n in the end of the page
-                        //TODO: fix regex, comma and others needed when it's sentence
-                        String highlightedText = stripper.getTextForRegion("annotatedRegion")
-                                .replaceAll("[\\n\\t]", " ")
-                                .replaceAll("[.!?,\\--]", "")
-                                .trim();
+                        String highlightedText = stripper.getTextForRegion("annotatedRegion");
+
 
                         if (j > 1) {
                             str = str.concat(highlightedText);
@@ -156,7 +152,12 @@ public class PdfExtractor {
                             str = highlightedText;
                         }
                     }
-                    annotationTexts.add(str);
+                    annotationTexts.add(
+                            str
+                                    .replaceAll("[\\n\\t]", " ")
+                                    .replaceAll("[.!?,\\--;]", "")
+                                    .trim()
+                    );
                 }
             }
         } catch (PDFTextStripperByAreaCreationException | PDFStripperByAreaRegionExtractionException e) {

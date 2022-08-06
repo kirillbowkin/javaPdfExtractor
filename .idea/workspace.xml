@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="added extraction of squiggled words">
+    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="Fixing tests, now there are red">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" afterDir="false" />
     </list>
@@ -118,6 +118,29 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="PdfExtractorTest.shouldPassIfReturnsAllHighlightedWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfReturnsAllHighlightedWords&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="PdfExtractorTest.shouldPassIfReturnsAllSquiggledWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -187,36 +210,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PdfExtractorTest.shouldPassIfThereAreSquiggledWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfThereAreSquiggledWords&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.PdfExtractorTest" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllSquiggledWords" />
-        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllSquiggleddWords" />
-        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreSquiggledWords" />
+        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllHighlightedWords" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllUnderlinedWords" />
+        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllSquiggleddWords" />
       </list>
     </recent_temporary>
   </component>
@@ -404,7 +404,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659742404025</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="redundant gap in regex">
+      <created>1659792230818</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1659792230818</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Fixing tests, now there are red">
+      <created>1659792285508</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1659792285508</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -419,8 +433,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
-    <MESSAGE value="added pdfbox dependency" />
     <MESSAGE value="deleted Main class generated by default" />
     <MESSAGE value="started creating PdfExtractor class" />
     <MESSAGE value="setup testing class for PdfExtractor" />
@@ -444,7 +456,9 @@
     <MESSAGE value="made generic method for extracting different annotations" />
     <MESSAGE value="added extraction of underlined words" />
     <MESSAGE value="added extraction of squiggled words" />
-    <option name="LAST_COMMIT_MESSAGE" value="added extraction of squiggled words" />
+    <MESSAGE value="redundant gap in regex" />
+    <MESSAGE value="Fixing tests, now there are red" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing tests, now there are red" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
