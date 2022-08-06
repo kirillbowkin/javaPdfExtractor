@@ -146,7 +146,7 @@ public class PdfExtractor {
                         //TODO: fix regex, when \n in the end of the page
                         //TODO: fix regex, comma and others needed when it's sentence
                         String highlightedText = stripper.getTextForRegion("annotatedRegion")
-                                .replaceAll("[\\n\\t ]", " ")
+                                .replaceAll("[\\n\\t]", " ")
                                 .replaceAll("[.!?,\\--]", "")
                                 .trim();
 
