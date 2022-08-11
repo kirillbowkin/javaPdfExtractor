@@ -1,18 +1,23 @@
 package org.example;
 
-import java.awt.geom.Rectangle2D;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.pdfbox.cos.*;
+import org.apache.pdfbox.cos.COSArray;
+import org.apache.pdfbox.cos.COSName;
+import org.apache.pdfbox.cos.COSNumber;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
 import org.apache.pdfbox.text.PDFTextStripperByArea;
 import org.example.exceptions.*;
+
+import java.awt.geom.Rectangle2D;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
+import static org.example.util.ThrowingConsumer.throwingConsumer;
 
 
 public class PdfExtractor {
@@ -35,22 +40,35 @@ public class PdfExtractor {
     private List<String> getAnnotatedWords(PdfAnnotationType annotationType) throws GetAnnotatedWordsException {
         List<String> annotatedTexts = new ArrayList<>();
 
-        int pageNum = 0;
+//        int pageNum = 0;
         //TODO: consider changing foreach to streams
         try {
-            for (PDPage pdfpage : this.pdfDocument.getPages()) {
-                pageNum++;
-                List<PDAnnotation> annotations = null;
-                try {
-                    annotations = pdfpage.getAnnotations();
-                } catch (IOException e) {
-                    throw new GetAnnotationsException("Failed to get annotations from page", e.getCause());
-                }
+//            for (PDPage pdfpage : this.pdfDocument.getPages()) {
+//                pageNum++;
+//                List<PDAnnotation> annotations = null;
+//                try {
+//                    annotations = pdfpage.getAnnotations();
+//                } catch (IOException e) {
+//                    throw new GetAnnotationsException("Failed to get annotations from page", e.getCause());
+//                }
+//
+//                List<String> wordsForAnnotations = getWordsForAnnotations(pdfpage, annotations, annotationType);
+//                annotatedTexts.addAll(wordsForAnnotations);
+//
+//            }
 
-                annotatedTexts.addAll(getWordsForAnnotations(pdfpage, annotations, annotationType));
 
-            }
-        } catch (GetAnnotationsException | GetWordsForAnnotationsException e) {
+
+           StreamSupport.stream(this.pdfDocument.getPages().spliterator(), false)
+                   .collect(Collectors.toList())
+                   .parallelStream()
+                   .forEachOrdered(throwingConsumer(pdfPage -> {
+                       System.out.println(Thread.currentThread().getName());
+                       var annotations = pdfPage.getAnnotations();
+                       var wordsForAnnotations = getWordsForAnnotations(pdfPage, annotations, annotationType);
+                       annotatedTexts.addAll(wordsForAnnotations);
+                   }));
+        } catch (Exception e) {
             throw new GetAnnotatedWordsException("Failed to get annotated words", e.getCause());
         }
         return annotatedTexts;
