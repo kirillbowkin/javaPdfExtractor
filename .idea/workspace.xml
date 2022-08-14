@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="added extracting for stroke out words">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/util/ThrowingConsumer.java" afterDir="false" />
+    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="changed getAnnotatedWords into parallel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" afterDir="false" />
     </list>
@@ -431,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659802322235</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="changed getAnnotatedWords into parallel">
+      <created>1660248536149</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1660248536150</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,7 +452,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="setup testing class for PdfExtractor" />
     <MESSAGE value="fixing BeforeAll in PdfExtractorTest" />
     <MESSAGE value="fixing BeforeAll in PdfExtractorTest again" />
     <MESSAGE value="created test for extracting highlighted words" />
@@ -471,7 +476,8 @@
     <MESSAGE value="Fixing tests, now there are red" />
     <MESSAGE value="made tests green by putting regex to the right place" />
     <MESSAGE value="added extracting for stroke out words" />
-    <option name="LAST_COMMIT_MESSAGE" value="added extracting for stroke out words" />
+    <MESSAGE value="changed getAnnotatedWords into parallel" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed getAnnotatedWords into parallel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
