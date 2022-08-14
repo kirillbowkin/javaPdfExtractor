@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="changed getAnnotatedWords into parallel">
+    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="implemented words extraction only for given pages range">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PdfExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Willows.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Willows.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/home/kiril/IdeaProjects/pdfExtractor",
+    "last_opened_file_path": "/home/kiril/IdeaProjects/pdfExtractor/src/test/resources",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -132,7 +133,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PdfExtractorTest.shouldPassIfReturnsAllStrokeOutWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PdfExtractorTest.shouldPassIfNumberOfPagesCorrespondsToADefinedRange" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -145,7 +146,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfReturnsAllStrokeOutWords&quot;" />
+            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfNumberOfPagesCorrespondsToADefinedRange&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PdfExtractorTest.shouldPassIfReturnsAllHighlightedWordsForPagesRange" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfReturnsAllHighlightedWordsForPagesRange&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -178,43 +202,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PdfExtractorTest.shouldPassIfThereAreStrokeOutWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.example.PdfExtractorTest.shouldPassIfThereAreStrokeOutWords&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfNumberOfPagesCorrespondsToADefinedRange" />
+      <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllHighlightedWordsForPagesRange" />
       <item itemvalue="Gradle.PdfExtractorTest" />
-      <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllStrokeOutWords" />
       <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreHighlightedWords" />
-      <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreStrokeOutWords" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.PdfExtractorTest" />
+        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllHighlightedWordsForPagesRange" />
+        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfNumberOfPagesCorrespondsToADefinedRange" />
         <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreHighlightedWords" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfReturnsAllStrokeOutWords" />
-        <item itemvalue="Gradle.PdfExtractorTest.shouldPassIfThereAreStrokeOutWords" />
       </list>
     </recent_temporary>
   </component>
@@ -437,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660248536150</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="implemented words extraction only for given pages range">
+      <created>1660497778839</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1660497778840</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,7 +460,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing BeforeAll in PdfExtractorTest" />
     <MESSAGE value="fixing BeforeAll in PdfExtractorTest again" />
     <MESSAGE value="created test for extracting highlighted words" />
     <MESSAGE value="added one more test" />
@@ -477,7 +484,8 @@
     <MESSAGE value="made tests green by putting regex to the right place" />
     <MESSAGE value="added extracting for stroke out words" />
     <MESSAGE value="changed getAnnotatedWords into parallel" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed getAnnotatedWords into parallel" />
+    <MESSAGE value="implemented words extraction only for given pages range" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented words extraction only for given pages range" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
