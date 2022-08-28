@@ -24,6 +24,7 @@ import static org.example.util.ThrowingConsumer.throwingConsumer;
 
 public class PdfExtractor {
     private final PDDocument pdfDocument;
+    private final List<PDPage> pdPages;
 
     /**
      * Constructor
@@ -37,21 +38,17 @@ public class PdfExtractor {
         } catch (IOException e) {
             throw new PdfLoadException("Failed to load pdf file", e.getCause());
         }
+
+        this.pdPages = getPdPages();
     }
 
     private List<String> getAnnotatedWords(PdfAnnotationType annotationType, IntStream pages) throws GetAnnotatedWordsException {
         List<String> annotatedTexts = new ArrayList<>();
 
         try {
-            List<PDPage> pdPages = StreamSupport
-                    .stream(this.pdfDocument.getPages().spliterator(), false)
-                    //TODO: why we're converting stream to list down there?
-                    .collect(Collectors.toList());
-
             pages
-                    .mapToObj(pdPages::get)
-                    .collect(Collectors.toList())
-                    .parallelStream()
+                    .mapToObj(this.pdPages::get)
+                    .parallel()
                     .forEachOrdered(throwingConsumer(pdfPage -> {
                         System.out.println(Thread.currentThread().getName());
                         var annotations = pdfPage.getAnnotations();
@@ -62,6 +59,17 @@ public class PdfExtractor {
             throw new GetAnnotatedWordsException("Failed to get annotated words", e.getCause());
         }
         return annotatedTexts;
+    }
+
+    /**
+     * returns list of all pages for pdf document
+     *
+     * @return list of PDPages
+     */
+    private List<PDPage> getPdPages() {
+        return StreamSupport
+                .stream(this.pdfDocument.getPages().spliterator(), false)
+                .collect(Collectors.toList());
     }
 
     /**
