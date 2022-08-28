@@ -13,7 +13,8 @@ import org.example.exceptions.*;
 import java.awt.geom.Rectangle2D;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.StreamSupport;
@@ -41,24 +42,7 @@ public class PdfExtractor {
     private List<String> getAnnotatedWords(PdfAnnotationType annotationType, IntStream pages) throws GetAnnotatedWordsException {
         List<String> annotatedTexts = new ArrayList<>();
 
-//        int pageNum = 0;
-        //TODO: consider changing foreach to streams
         try {
-//            for (PDPage pdfpage : this.pdfDocument.getPages()) {
-//                pageNum++;
-//                List<PDAnnotation> annotations = null;
-//                try {
-//                    annotations = pdfpage.getAnnotations();
-//                } catch (IOException e) {
-//                    throw new GetAnnotationsException("Failed to get annotations from page", e.getCause());
-//                }
-//
-//                List<String> wordsForAnnotations = getWordsForAnnotations(pdfpage, annotations, annotationType);
-//                annotatedTexts.addAll(wordsForAnnotations);
-//
-//            }
-
-
             List<PDPage> pdPages = StreamSupport
                     .stream(this.pdfDocument.getPages().spliterator(), false)
                     //TODO: why we're converting stream to list down there?
@@ -86,7 +70,7 @@ public class PdfExtractor {
      * @return list of highlighted words
      * @throws GetHighlightedWordsException
      */
-    public List<String> getHighlightedWords( IntStream pages) throws GetHighlightedWordsException {
+    public List<String> getHighlightedWords(IntStream pages) throws GetHighlightedWordsException {
         try {
             return getAnnotatedWords(PdfAnnotationType.HIGHLIGHTED, pages);
         } catch (GetAnnotatedWordsException e) {
@@ -108,7 +92,7 @@ public class PdfExtractor {
      * @return list of underlined words
      * @throws GetUnderlinedWordsException
      */
-    public List<String> getUnderlinedWords( IntStream pages) throws GetUnderlinedWordsException {
+    public List<String> getUnderlinedWords(IntStream pages) throws GetUnderlinedWordsException {
         try {
             return getAnnotatedWords(PdfAnnotationType.UNDERLINED, pages);
         } catch (GetAnnotatedWordsException e) {
@@ -116,7 +100,7 @@ public class PdfExtractor {
         }
     }
 
-    public List<String> getUnderlinedWords( ) throws GetUnderlinedWordsException {
+    public List<String> getUnderlinedWords() throws GetUnderlinedWordsException {
         try {
             return getAnnotatedWords(PdfAnnotationType.UNDERLINED, IntStream.range(0, this.pdfDocument.getNumberOfPages()));
         } catch (GetAnnotatedWordsException e) {
@@ -130,7 +114,7 @@ public class PdfExtractor {
      * @return list of squiggled words
      * @throws GetSquiggledWordsException
      */
-    public List<String> getSquiggledWords( IntStream pages) throws GetSquiggledWordsException {
+    public List<String> getSquiggledWords(IntStream pages) throws GetSquiggledWordsException {
         try {
             return getAnnotatedWords(PdfAnnotationType.SQUIGGLY, pages);
         } catch (GetAnnotatedWordsException e) {
@@ -147,14 +131,13 @@ public class PdfExtractor {
     }
 
 
-
     /**
      * returns list of strokeout words for all pages of pdf document
      *
      * @return list of strokeout words
      * @throws GetStrokeoutWordsException
      */
-    public List<String> getStrokeoutWords( IntStream pages) throws GetStrokeoutWordsException {
+    public List<String> getStrokeoutWords(IntStream pages) throws GetStrokeoutWordsException {
         try {
             return getAnnotatedWords(PdfAnnotationType.STRIKEOUT, pages);
         } catch (GetAnnotatedWordsException e) {
