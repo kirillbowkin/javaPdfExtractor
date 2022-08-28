@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="implemented words extraction only for given pages range">
+    <list default="true" id="6671521c-80c7-4382-abae-880337e9bd53" name="Changes" comment="added new tests fixed previous ones">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PdfExtractorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Willows.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Willows.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,16 +69,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/home/kiril/IdeaProjects/pdfExtractor/src/test/resources",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kiril/IdeaProjects&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.exceptions" />
@@ -445,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660497778840</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added new tests fixed previous ones">
+      <created>1660499344679</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1660499344679</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -460,7 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing BeforeAll in PdfExtractorTest again" />
     <MESSAGE value="created test for extracting highlighted words" />
     <MESSAGE value="added one more test" />
     <MESSAGE value="made tests for getHighlightedWords green by stackoverflow magic" />
@@ -485,7 +489,8 @@
     <MESSAGE value="added extracting for stroke out words" />
     <MESSAGE value="changed getAnnotatedWords into parallel" />
     <MESSAGE value="implemented words extraction only for given pages range" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented words extraction only for given pages range" />
+    <MESSAGE value="added new tests fixed previous ones" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new tests fixed previous ones" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

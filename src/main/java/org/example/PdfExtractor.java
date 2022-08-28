@@ -41,24 +41,7 @@ public class PdfExtractor {
     private List<String> getAnnotatedWords(PdfAnnotationType annotationType, IntStream pages) throws GetAnnotatedWordsException {
         List<String> annotatedTexts = new ArrayList<>();
 
-//        int pageNum = 0;
-        //TODO: consider changing foreach to streams
         try {
-//            for (PDPage pdfpage : this.pdfDocument.getPages()) {
-//                pageNum++;
-//                List<PDAnnotation> annotations = null;
-//                try {
-//                    annotations = pdfpage.getAnnotations();
-//                } catch (IOException e) {
-//                    throw new GetAnnotationsException("Failed to get annotations from page", e.getCause());
-//                }
-//
-//                List<String> wordsForAnnotations = getWordsForAnnotations(pdfpage, annotations, annotationType);
-//                annotatedTexts.addAll(wordsForAnnotations);
-//
-//            }
-
-
             List<PDPage> pdPages = StreamSupport
                     .stream(this.pdfDocument.getPages().spliterator(), false)
                     //TODO: why we're converting stream to list down there?
